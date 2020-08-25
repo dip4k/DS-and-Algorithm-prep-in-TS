@@ -38,3 +38,16 @@ This is practice repo for Udemy course
 #### space complexity
 
 - how much memory need for executing the program
+
+### Data structures
+
+### Array
+
+- intro to array code added.
+
+#### Array operations and their time complexity
+
+- insertion --> O(n)
+- deletion --> O(n)
+- search --> O(1)
+- traversal --> o(1)
