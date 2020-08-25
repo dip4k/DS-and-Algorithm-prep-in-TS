@@ -13,6 +13,13 @@ This is practice repo for Udemy course
 - using eslint for code standard and prettier for formatting
 - using (node + ts-node) or deno to run program files
 
+### how to run
+
+- clone this repo
+- install npm packages by running --> npm install
+- when using deno, execute program file by running --> deno run fileLocation/filename.ts
+- when using node+ts-node --> ts-node fileLocation/filename.ts
+
 ## Will add test cases for testing program files
 
 ## Main Topics
