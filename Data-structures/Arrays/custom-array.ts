@@ -83,19 +83,19 @@ arr.push(100);
 arr.push("first string");
 arr.push("third");
 arr.push("second");
-console.log(arr); // { length: 4, data: { 0: 100, 1: "first string", 2: "third", 3: "second" } }
+console.log(arr); // MyArray { length: 4, data: { 0: 100, 1: "first string", 2: "third", 3: "second" } }
 
 arr.pop();
-console.log(arr); // { length: 3, data: { 0: 100, 1: "first string", 2: "third" } }
+console.log(arr); // MyArray { length: 3, data: { 0: 100, 1: "first string", 2: "third" } }
 
 arr.push(200);
 arr.push("fourth");
-console.log(arr); // { length: 5, data: { 0: 100, 1: "first string", 2: "third", 3: 200, 4: "fourth" } }
+console.log(arr); // MyArray { length: 5, data: { 0: 100, 1: "first string", 2: "third", 3: 200, 4: "fourth" } }
 
 arr.delete(0);
-console.log(arr); // { length: 4, data: { 0: "first string", 1: "third", 2: 200, 3: "fourth" } }
+console.log(arr); // MyArray { length: 4, data: { 0: "first string", 1: "third", 2: 200, 3: "fourth" } }
 arr.insert(2, "fifth");
-console.log(arr); // { length: 5, data: { 0: "first string", 1: "third", 2: "fifth", 3: 200, 4: 200 } }
+console.log(arr); // MyArray { length: 5, data: { 0: "first string", 1: "third", 2: "fifth", 3: 200, 4: 200 } }
 
 console.log(arr.get(2)); // fifth
 

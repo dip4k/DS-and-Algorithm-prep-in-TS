@@ -44,5 +44,8 @@ function twoSum2(arr: number[], sum: number) {
   return indicePair;
 }
 
-console.log(twoSum([-3, 4, 3, 90], 0));
-console.log(twoSum2([2, 11, 7, 15], 9));
+console.log(twoSum([-3, 4, 3, 90], 0)); // [ 0, 2 ]
+console.log(twoSum2([2, 11, 15, 7], 9)); // [ 0, 3 ]
+
+// to run using deno --> deno run .\Interview-questions\two-sum.ts
+// using ts-node --> ts-node .\Interview-questions\two-sum.ts
