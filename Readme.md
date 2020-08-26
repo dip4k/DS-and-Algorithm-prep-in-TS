@@ -46,6 +46,8 @@
 
 - [x] intro to array
 - [x] own custom array
+- [x] reverse given string
+- [x] merge two sorted array into one (bonus merge any array in ascending or descending order)
 
 #### Array operations and their time complexity
 
