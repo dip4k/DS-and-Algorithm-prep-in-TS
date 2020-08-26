@@ -1,23 +1,31 @@
 type ArrayType<T> = { [key: number]: T }; // custom array type, so we can use obj[key] syntax
 
 // custom array which stores string or number
-class MyArray {
+class MyArray<T> {
   private length: number;
-  private data: ArrayType<string | number>;
+  private data: ArrayType<T>;
   constructor() {
     this.length = 0;
-    this.data = {};
+    this.data = Object.create({});
+  }
+
+  // get element at index
+  get(index: number): T | null {
+    if (index < 0) {
+      return null;
+    }
+    return this.data[index];
   }
 
   // push
-  push(item: string | number): number {
+  push(item: T): number {
     this.data[this.length] = item;
     this.length++;
     return this.length;
   }
 
   // pop
-  pop(): string | number | undefined {
+  pop(): T | undefined {
     if (this.length == 0) {
       return undefined;
     }
@@ -28,7 +36,7 @@ class MyArray {
   }
 
   // delete item at index
-  delete(index: number): string | number | undefined {
+  delete(index: number): T | undefined {
     if (this.length == 0) {
       return undefined;
     }
@@ -50,7 +58,7 @@ class MyArray {
   }
 
   // insert item at place
-  insert(index: number, item: string | number): number | undefined {
+  insert(index: number, item: T): number | undefined {
     if (index < 0 || (0 < index && index > this.length - 1)) {
       return undefined;
     }
@@ -59,7 +67,7 @@ class MyArray {
   }
 
   // call in case of insert
-  private shiftItemsToRight(insertIndex: number, item: string | number) {
+  private shiftItemsToRight(insertIndex: number, item: T) {
     for (let i = insertIndex; i < this.length; i++) {
       this.data[i + 1] = this.data[i];
     }
@@ -68,18 +76,28 @@ class MyArray {
   }
 }
 
-const arr = new MyArray();
+// use of custom array
+
+const arr = new MyArray<string | number>();
 arr.push(100);
 arr.push("first string");
 arr.push("third");
 arr.push("second");
+console.log(arr); // { length: 4, data: { 0: 100, 1: "first string", 2: "third", 3: "second" } }
+
 arr.pop();
+console.log(arr); // { length: 3, data: { 0: 100, 1: "first string", 2: "third" } }
+
 arr.push(200);
 arr.push("fourth");
+console.log(arr); // { length: 5, data: { 0: 100, 1: "first string", 2: "third", 3: 200, 4: "fourth" } }
+
 arr.delete(0);
-console.log(arr);
+console.log(arr); // { length: 4, data: { 0: "first string", 1: "third", 2: 200, 3: "fourth" } }
 arr.insert(2, "fifth");
-console.log(arr);
+console.log(arr); // { length: 5, data: { 0: "first string", 1: "third", 2: "fifth", 3: 200, 4: 200 } }
+
+console.log(arr.get(2)); // fifth
 
 // run using deno --> deno run .\Data-structures\Arrays\custom-array.ts
 // ts-node --> ts-node .\Data-structures\Arrays\custom-array.ts
