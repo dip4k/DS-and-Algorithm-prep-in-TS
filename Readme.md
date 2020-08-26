@@ -2,8 +2,7 @@
 
 ## Introduction
 
-This is practice repo for Udemy course
-[Master the Coding Interview: Data Structures + Algorithms](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/) purely written in Typescript.
+> This is practice repo for Udemy course [Master the Coding Interview: Data Structures + Algorithms](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/) purely written in Typescript.
 
 ## Dev Setup
 
@@ -43,7 +42,10 @@ This is practice repo for Udemy course
 
 ### Array
 
-- intro to array code added.
+#### programs
+
+- [x] intro to array
+- [x] own custom array
 
 #### Array operations and their time complexity
 
@@ -51,3 +53,7 @@ This is practice repo for Udemy course
 - deletion --> O(n)
 - search --> O(1)
 - traversal --> o(1)
+
+## Interview Questions
+
+- [x] google-interview question
