@@ -26,7 +26,7 @@ function twoSum(inputArr: number[], sum: number): number[] | undefined {
   return indicePair;
 }
 
-type Dictionary<T> = { [key: number]: T }; // needed for using obj[key] syntax
+export type Dictionary<T> = { [key: number]: T }; // needed for using obj[key] syntax
 // using javascript object as dictionary/key value pair --> O(n)
 function twoSum2(arr: number[], sum: number) {
   const indicePair: number[] = [];
