@@ -41,9 +41,6 @@ let rotate4 = function (nums: number[], k: number) {
   // reverse n-k to n (k+1 to end)
   nums.splice(k, nums.length - k, ...nums.slice(k).reverse());
   return nums; // return result
-
-  nums.splice(0, 0, ...nums.slice(nums.length - k));
-  nums.splice(nums.length - k, k);
 };
 
 // cleaner version using splice and slice
