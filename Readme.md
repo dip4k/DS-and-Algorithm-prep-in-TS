@@ -56,7 +56,20 @@
 - search --> O(1)
 - traversal --> o(1)
 
+### Hash Table
+
+#### programs
+
+- [x] custom hash table
+
 ## Interview Questions
 
 - [x] google-interview question
 - [x] [two sum - from leet code](https://leetcode.com/problems/two-sum/)
+
+### Array/string additional questions
+
+- [x] [move zeroes to end - from leet code](https://leetcode.com/problems/move-zeroes/)
+- [x] [contains duplicate - from leet code](https://leetcode.com/problems/contains-duplicate/description/)
+- [x] [longest word - from coder byte](https://coderbyte.com/editor/Longest%20Word:JavaScript)
+- [x] [rotate array (right shift) - from leet code](https://leetcode.com/problems/rotate-array/description/)
