@@ -61,6 +61,7 @@
 #### programs
 
 - [x] custom hash table
+- [x] first recurring character
 
 ## Interview Questions
 
