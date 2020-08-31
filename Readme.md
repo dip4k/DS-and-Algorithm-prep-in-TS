@@ -62,6 +62,17 @@
 
 - [x] custom hash table
 - [x] first recurring character
+- [x] custom generic hash table
+
+#### Time complexity
+
+- search --> avg : O(1), worst : O(n)
+- insertion --> avg : O(1), worst : O(n)
+- deletion --> avg : O(1), worst : O(n)
+
+#### Space complexity
+
+- O(n)
 
 ## Interview Questions
 
