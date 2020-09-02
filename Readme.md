@@ -6,6 +6,8 @@
 
 ## Dev Setup
 
+---
+
 #### pre-requisite : node/deno installed
 
 - using vs code (with prettier, eslint and typescript support installed)
@@ -13,6 +15,8 @@
 - using (node + ts-node) or deno to run program files
 
 ### how to run
+
+---
 
 - clone this repo
 - install npm packages by running --> npm install
@@ -22,6 +26,8 @@
 ## Will add test cases for testing program files
 
 ## Main Topics
+
+---
 
 ### How to measure code/program quality?
 
@@ -40,7 +46,11 @@
 
 ### Data structures
 
+---
+
 ### Array
+
+---
 
 #### programs
 
@@ -58,6 +68,8 @@
 
 ### Hash Table
 
+---
+
 #### programs
 
 - [x] custom hash table
@@ -74,7 +86,25 @@
 
 - O(n)
 
+### Linked-List
+
+---
+
+#### Programs
+
+- [x] linked-list implementation in typescript
+
+#### Opeartions
+
+- prepend --> O(1)
+- append ---> O(1)
+- lookup --> O(n)
+- insert --> O(n)
+- delete --> O(n)
+
 ## Interview Questions
+
+---
 
 - [x] google-interview question
 - [x] [two sum - from leet code](https://leetcode.com/problems/two-sum/)
@@ -85,3 +115,8 @@
 - [x] [contains duplicate - from leet code](https://leetcode.com/problems/contains-duplicate/description/)
 - [x] [longest word - from coder byte](https://coderbyte.com/editor/Longest%20Word:JavaScript)
 - [x] [rotate array (right shift) - from leet code](https://leetcode.com/problems/rotate-array/description/)
+
+## Resources
+
+- [master the interview mindmap](https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview)
+- [algorithm mindmap](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link)
