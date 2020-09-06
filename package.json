@@ -1,8 +1,7 @@
 {
   "name": "ds-and-algorithm-prep-in-ts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
     "tslib": "^2.0.1",
     "typescript": "^4.0.2"
@@ -10,17 +9,26 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
-    "eslint": "^7.7.0",
+    "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "nodemon": "^2.0.4",
-    "prettier": "^2.1.0",
+    "prettier": "^2.1.1",
     "ts-node": "^9.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "data structures",
+    "algorithms",
+    "typescript",
+    "coding interview"
+  ],
+  "author": "Deepak Chauhan",
+  "license": "ISC",
+  "repository": {
+    "type": "public",
+    "url": "https://github.com/dip4k/DS-and-Algorithm-prep-in-TS.git"
+  }
 }
