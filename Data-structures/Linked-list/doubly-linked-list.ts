@@ -48,15 +48,16 @@ class DoublyLinkedList<T> implements ILinkedList<T> {
     const newNode = new Node(data);
 
     // leader node is index-1 th element
-    const leaderNode = this.traverseToIndex(index - 1);
-    const holdingPointer = leaderNode.next as Node<T>; //-> *(--)*
-    // set new node next to holding pointer next and prev to leadernode
-    newNode.prev = leaderNode;
-    newNode.next = holdingPointer;
+    const leader = this.traverseToIndex(index - 1);
+    const follower = leader.next as Node<T>; //-> *(--)*
     // set leader node next to new node
-    leaderNode.next = newNode;
+    leader.next = newNode;
+    // set new node next to holding pointer next and prev to leadernode
+    newNode.prev = leader;
+    newNode.next = follower;
+
     // set holding pointer prev to newnode
-    holdingPointer.prev = newNode;
+    follower.prev = newNode;
     this.size++;
     return this.toArray();
   }
@@ -77,11 +78,11 @@ class DoublyLinkedList<T> implements ILinkedList<T> {
       this.size--;
       return this.toArray();
     }
-    const leaderNode = this.traverseToIndex(index - 1);
-    const unwantedNode = leaderNode.next as Node<T>;
-    leaderNode.next = unwantedNode.next;
-    if (leaderNode.next != null) {
-      leaderNode.next.prev = leaderNode;
+    const leader = this.traverseToIndex(index - 1);
+    const unwantedNode = leader.next as Node<T>;
+    leader.next = unwantedNode.next;
+    if (leader.next != null) {
+      leader.next.prev = leader;
     }
     this.size--;
     return this.toArray();
@@ -89,10 +90,20 @@ class DoublyLinkedList<T> implements ILinkedList<T> {
 
   toArray(): T[] {
     const result: T[] = [];
-    let node = this.head;
+    let node: Node<T> | null = this.head;
     while (node) {
       result.push(node.data);
-      node = node.next as Node<T>;
+      node = node.next;
+    }
+    return result;
+  }
+
+  toReversedArray() {
+    const result: T[] = [];
+    let node: Node<T> | null = this.tail;
+    while (node) {
+      result.push(node.data);
+      node = node.prev;
     }
     return result;
   }
@@ -134,6 +145,7 @@ numberLinkedList.insert(0, 100); // 100 --> --> 1 --> 10  --> 200 --> 5 --> 16  
 console.log(numberLinkedList.toArray()); // [ 100, 1, 10, 200, 5, 16 ]
 console.log(numberLinkedList.size); // 6
 console.log(numberLinkedList.removeNode(5)); // [ 100, 1, 10, 200, 5 ]
+console.log(numberLinkedList.toReversedArray()); //  [ 5, 200, 10, 1, 100 ]
 
 // const stringLinkedList = new DoublyLinkedList<string>("pikachu");
 // console.log(stringLinkedList); //  LinkedList { head: { data: "pikachu" }, tail: { data: "pikachu" }, size: 1 }

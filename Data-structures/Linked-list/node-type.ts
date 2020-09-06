@@ -1,6 +1,6 @@
 export interface INode<T> {
   data: T;
-  next?: INode<T>;
+  next?: INode<T> | null;
 }
 
 export class Node<T> {
@@ -16,6 +16,7 @@ export interface ILinkedList<T> {
   deleteNode?(node: Node<T>): T[] | undefined;
   removeNode(index: number): T[] | undefined;
   toArray(): T[];
+  toReversedArray(): T[];
   size: number;
   // search(comparator: (data: T) => boolean): T[] | null;
 }

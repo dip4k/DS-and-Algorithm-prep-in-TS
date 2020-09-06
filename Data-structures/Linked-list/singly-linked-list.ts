@@ -79,6 +79,25 @@ class LinkedList<T> {
     return result;
   }
 
+  reverse() {
+    if (!this.head.next) {
+      return this;
+    }
+
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this.toArray();
+  }
+
   private createNode(data: T): INode<T> {
     return { data: data };
   }
@@ -127,6 +146,7 @@ console.log(stringLinkedList.insert(2, "charizard")); //  [ "charmender", "pikac
 console.log(stringLinkedList.insert(2, "squirtle")); //  [ "charmender", "pikachu", "squirtle", "charizard", "balbasaur" ]
 console.log(stringLinkedList.size); //  5
 console.log(stringLinkedList.deleteNode(3)); //  [ "charmender", "pikachu", "squirtle", "balbasaur" ]
+console.log(stringLinkedList.reverse()); //  [ 'balbasaur', 'squirtle', 'pikachu', 'charmender' ]
 
 // run  --> ts-node .\Data-structures\Linked-list\singly-linked-list.ts
 // run  --> deno run .\Data-structures\Linked-list\singly-linked-list.ts
