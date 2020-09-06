@@ -1,73 +1,71 @@
 // write custom linked list using js object and class syntax
 
-interface INode<T> {
-  value: T;
-  next?: INode<T>;
-}
+// import { INode } from "./node-type.ts"; // comment when using ts-node
+import { INode } from "./node-type"; // uncomment when using ts-node
 
 class LinkedList<T> {
   private head: INode<T>;
   private tail: INode<T>;
-  public length: number;
-  constructor(value: T) {
-    const newNode = this.createNode(value);
+  public size: number;
+  constructor(data: T) {
+    const newNode = this.createNode(data);
     this.head = newNode;
     this.tail = newNode;
-    this.length = 1;
+    this.size = 1;
   }
 
-  append(value: T) {
-    // add value after tail
-    const newNode = this.createNode(value);
+  append(data: T) {
+    // add data after tail
+    const newNode = this.createNode(data);
     this.appendToTheEndOfTheList(newNode);
-    this.length++;
+    this.size++;
     return this.toArray();
   }
 
-  prepend(value: T) {
-    const newNode = this.createNode(value);
+  prepend(data: T) {
+    const newNode = this.createNode(data);
     this.prependToStartOfTheList(newNode);
-    this.length++;
+    this.size++;
     return this.toArray();
   }
 
-  insert(index: number, value: T) {
-    if (index < 0 || index > this.length) {
+  insert(index: number, data: T) {
+    if (index < 0 || index > this.size) {
       return undefined;
     }
 
     if (index == 0) {
       // prepend
-      return this.prepend(value);
+      return this.prepend(data);
     }
-    if (index == this.length) {
+    if (index == this.size) {
       //append
-      return this.append(value);
+      return this.append(data);
     }
-    const newNode = this.createNode(value);
+    const newNode = this.createNode(data);
 
     // leader node is index-1 th element
     const leaderNode = this.traverseToIndex(index - 1);
     const holdingPointer = leaderNode.next; //-> *(--)*
     leaderNode.next = newNode;
     newNode.next = holdingPointer;
-    this.length++;
+    this.size++;
     return this.toArray();
   }
 
-  remove(index: number) {
-    if (index < 0 || index >= this.length) {
+  deleteNode(index: number) {
+    if (index < 0 || index >= this.size) {
       return undefined;
     }
     if (index == 0) {
       this.head = this.head.next as INode<T>;
-      this.length--;
+      this.size--;
       return this.toArray();
     }
     const leaderNode = this.traverseToIndex(index - 1);
     const unwantedNode = leaderNode.next as INode<T>;
     leaderNode.next = unwantedNode.next;
-    this.length--;
+    this.size--;
     return this.toArray();
   }
 
@@ -75,14 +73,14 @@ class LinkedList<T> {
     const result: T[] = [];
     let node = this.head;
     while (node) {
-      result.push(node.value);
+      result.push(node.data);
       node = node.next as INode<T>;
     }
     return result;
   }
 
-  private createNode(value: T): INode<T> {
-    return { value: value };
+  private createNode(data: T): INode<T> {
+    return { data: data };
   }
 
   private appendToTheEndOfTheList(node: INode<T>) {
@@ -118,17 +116,17 @@ class LinkedList<T> {
 // numberLinkedList.insert(2, 200); // 1 --> 10  --> 200 --> 5 --> 16  -->null
 // numberLinkedList.insert(0, 100); // 100 --> --> 1 --> 10  --> 200 --> 5 --> 16  -->null
 // console.log(numberLinkedList.toArray()); // [ 100, 1, 10, 200, 5, 16 ]
-// console.log(numberLinkedList.length); // 6
-// console.log(numberLinkedList.remove(5)); // [ 100, 1, 10, 200, 5 ]
+// console.log(numberLinkedList.size); // 6
+// console.log(numberLinkedList.deleteNode(5)); // [ 100, 1, 10, 200, 5 ]
 
 const stringLinkedList = new LinkedList<string>("pikachu");
-console.log(stringLinkedList); //  LinkedList { head: { value: "pikachu" }, tail: { value: "pikachu" }, length: 1 }
+console.log(stringLinkedList); //  LinkedList { head: { data: "pikachu" }, tail: { data: "pikachu" }, size: 1 }
 console.log(stringLinkedList.append("balbasaur")); // [ "pikachu", "balbasaur" ]
 console.log(stringLinkedList.prepend("charmender")); //  [ "charmender", "pikachu", "balbasaur" ]
 console.log(stringLinkedList.insert(2, "charizard")); //  [ "charmender", "pikachu", "charizard", "balbasaur" ]
 console.log(stringLinkedList.insert(2, "squirtle")); //  [ "charmender", "pikachu", "squirtle", "charizard", "balbasaur" ]
-console.log(stringLinkedList.length); //  5
-console.log(stringLinkedList.remove(3)); //  [ "charmender", "pikachu", "squirtle", "balbasaur" ]
+console.log(stringLinkedList.size); //  5
+console.log(stringLinkedList.deleteNode(3)); //  [ "charmender", "pikachu", "squirtle", "balbasaur" ]
 
-// run  --> ts-node .\Data-structures\Linked-list\linked-list.ts
-// run  --> deno run .\Data-structures\Linked-list\linked-list.ts
+// run  --> ts-node .\Data-structures\Linked-list\singly-linked-list.ts
+// run  --> deno run .\Data-structures\Linked-list\singly-linked-list.ts

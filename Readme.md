@@ -92,7 +92,8 @@
 
 #### Programs
 
-- [x] linked-list implementation in typescript
+- [x] singly-linked-list implementation in typescript
+- [x] doubly-linked-list implementation in typescript
 
 #### Opeartions
 
