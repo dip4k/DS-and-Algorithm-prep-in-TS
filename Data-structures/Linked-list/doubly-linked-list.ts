@@ -4,7 +4,7 @@
 // import { Node, ILinkedList } from "./node-type.ts"; // comment when using ts-node
 
 // ts-node imports
-import { ILinkedList, Node } from "./node-type"; // uncomment when using ts-node
+import { ILinkedList, Node } from "./node-type"; // uncomment when using deno
 
 class DoublyLinkedList<T> implements ILinkedList<T> {
   private head: Node<T>;

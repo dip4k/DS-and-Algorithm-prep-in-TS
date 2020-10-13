@@ -1,7 +1,7 @@
 // write custom linked list using js object and class syntax
 
-// import { INode } from "./node-type.ts"; // comment when using ts-node
-import { INode } from "./node-type"; // uncomment when using ts-node
+// import type { INode } from "./node-type.ts"; // comment when using ts-node
+import { INode } from "./node-type"; // uncomment when using deno
 
 class LinkedList<T> {
   private head: INode<T>;
